@@ -962,6 +962,14 @@ class Constituencies extends React.Component {
     ],
   };
 
+  componentDidMount() {
+    if (localStorage.getItem('constituencies')) {
+      this.setState({
+        constituencies: JSON.parse(localStorage.getItem('constituencies')),
+      });
+    }
+  }
+
   updatePerson = (constituency, person, score) => {
     const { constituencies } = this.state;
 
@@ -985,6 +993,8 @@ class Constituencies extends React.Component {
     this.setState({
       constituencies,
     });
+
+    localStorage.setItem('constituencies', JSON.stringify(constituencies));
 
     const allPersons = constituencies.map(a => {
       return a.persons;

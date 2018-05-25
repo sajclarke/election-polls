@@ -21,8 +21,15 @@ class App extends Component {
     ],
   };
 
+  componentDidMount() {
+    if (localStorage.getItem('parties')) {
+      this.setState({ parties: JSON.parse(localStorage.getItem('parties')) });
+    }
+  }
+
   updateTotal = parties => {
     this.setState({ parties });
+    localStorage.setItem('parties', JSON.stringify(parties));
   };
 
   render() {
