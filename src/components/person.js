@@ -1,20 +1,8 @@
 import React from 'react';
 
 class Person extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      total: 0,
-    };
-  }
-
-  updateValue = total => {
-    this.setState({ total });
-    this.props.updateTotal({
-      party: this.props.person.party,
-      total: Number(total),
-    });
+  updatePerson = score => {
+    this.props.updatePerson(this.props.person, Number(score));
   };
 
   render() {
@@ -33,8 +21,8 @@ class Person extends React.Component {
           <strong>TOTAL</strong>:{' '}
           <input
             type="number"
-            value={this.state.total}
-            onChange={({ target }) => this.updateValue(target.value)}
+            value={person.score}
+            onChange={({ target }) => this.updatePerson(target.value)}
           />
         </p>
       </article>

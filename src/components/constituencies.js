@@ -962,31 +962,31 @@ class Constituencies extends React.Component {
     ],
   };
 
-  updateValue = a => {
+  updatePerson = (constituency, person, score) => {
     const { constituencies } = this.state;
 
-    const updatedConstituences = constituencies.map(b => {
-      if (b.name === a.constituency) {
-        b.persons.map(z => {
-          if (z.party === a.party) {
-            return {
-              ...z,
-              score: a.score,
-            };
-          }
+    const local = constituencies.find(a => a.name === constituency);
+    const index = constituencies.indexOf(local);
 
-          return z;
-        });
-      }
+    constituencies[index] = {
+      ...local,
+      persons: local.persons.map(a => {
+        if (a.name === person.name) {
+          return {
+            ...person,
+            score,
+          };
+        }
 
-      return b;
-    });
+        return a;
+      }),
+    };
 
     this.setState({
-      constituencies: updatedConstituences,
+      constituencies,
     });
 
-    const allPersons = updatedConstituences.map(a => {
+    const allPersons = constituencies.map(a => {
       return a.persons;
     });
 
@@ -1043,7 +1043,7 @@ class Constituencies extends React.Component {
             <Constituency
               persons={a.persons}
               name={a.name}
-              updateValue={this.updateValue}
+              updatePerson={this.updatePerson}
             />
           );
         })}

@@ -3,35 +3,8 @@ import React from 'react';
 import Person from './person';
 
 class Constituency extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      persons: props.persons,
-    };
-  }
-
-  updateTotal = ({ party, total }) => {
-    const { persons } = this.state;
-
-    const updatedPersons = persons.map(a => {
-      if (a.party === party) {
-        a.score = total;
-      }
-
-      return a;
-    });
-
-    this.setState({
-      persons: updatedPersons,
-    });
-
-    this.props.updateValue(
-      updatedPersons.map(a => ({
-        party: a.party,
-        score: a.score,
-        constituency: this.props.name,
-      }))
-    );
+  updatePerson = (person, score) => {
+    this.props.updatePerson(this.props.name, person, score);
   };
 
   render() {
@@ -45,7 +18,7 @@ class Constituency extends React.Component {
               <Person
                 className="person"
                 person={a}
-                updateTotal={this.updateTotal}
+                updatePerson={this.updatePerson}
               />
             ))}
           </div>
