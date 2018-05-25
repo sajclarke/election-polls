@@ -68,6 +68,7 @@
 
 .persons {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .person {
@@ -84,6 +85,10 @@
   max-width: 80px;
   min-height: 80px;
   background: grey;
+}
+
+.person__party {
+  text-transform: uppercase;
 }
 
 .person__config {

@@ -27,4 +27,5 @@ body {
 }
 
 .score__header {
+  text-transform: uppercase;
 }
