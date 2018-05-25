@@ -23,6 +23,70 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.constituency {
+  text-align: left;
+  margin: 8px;
+  border: 1px solid black;
+  margin-bottom: 30px;
+}
+
+.constituency__content {
+  display: flex;
+  align-items: bottom;
+  padding: 16px;
+}
+
+.constituency__boxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: bottom;
+  margin-bottom: 57px;
+}
+
+.constituency__box {
+  margin: 0;
+  line-height: 19px;
+}
+
+.constituency__header {
+  font-size: 30px;
+  border-bottom: 1px solid black;
+}
+
+.constituency__header {
+  padding: 8px;
+}
+
+.persons {
+  display: flex;
+}
+
+.person {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.person__image {
+  min-width: 80px;
+  max-width: 80px;
+  min-height: 80px;
+  background: grey;
+}
+
+.person__config {
+  margin-left: 8px;
+  margin-bottom: 30px;
 }
