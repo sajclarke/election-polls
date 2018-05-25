@@ -17,6 +17,7 @@ body {
   width: 100%;
   background: #fff;
   border-bottom: 4px solid black;
+  z-index: 2;
 }
 
 .constituencies {
