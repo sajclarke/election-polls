@@ -1037,7 +1037,7 @@ class Constituencies extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div className="constituencies">
         {this.state.constituencies.map(a => {
           return (
             <Constituency
@@ -1047,7 +1047,7 @@ class Constituencies extends React.Component {
             />
           );
         })}
-      </React.Fragment>
+      </div>
     );
   }
 }

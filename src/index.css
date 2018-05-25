@@ -10,6 +10,19 @@ body {
   border-bottom: 4px solid black;
 }
 
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 4px solid black;
+}
+
+.constituencies {
+  margin-top: 200px;
+}
+
 .header span {
   background: pink;
   padding: 30px;
@@ -19,11 +32,15 @@ body {
 .scoreboard {
   flex-direction: row;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  font-size: 24px;
 }
 
 .score {
   flex: 1;
+  padding: 8px;
+  border: 1px solid red;
 }
 
 .score__header {

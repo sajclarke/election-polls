@@ -28,11 +28,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="header">
-          <span>Barbados Polls</span>
-        </header>
+        <div className="top">
+          <header className="header">
+            <span>Barbados Polls</span>
+          </header>
 
-        <ScoreBoard parties={this.state.parties} />
+          <ScoreBoard parties={this.state.parties} />
+        </div>
         <Constituencies updateTotal={this.updateTotal} />
       </div>
     );
